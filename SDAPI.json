@@ -1,0 +1,102 @@
+{
+	"model": "真实系：lofi_V2.safetensors",
+	"prompt": ",(masterpiece:1,2),best quality,masterpiece,highres,original,extremely detailed wallpaper,perfect lighting,(extremely detailed CG:1.2),drawing,paintbrush,",
+	"ng_prompt": ",NSFW,(worst quality:2),(low quality:2),(normal quality:2),lowres,normal quality,((monochrome)),((grayscale)),skin spots,acnes,skin blemishes,age spot,(ugly:1.331),(duplicate:1.331),(morbid:1.21),(mutilated:1.21),(tranny:1.331),mutated hands,(poorly drawn hands:1.5),blurry,(bad anatomy:1.21),(bad proportions:1.331),extra limbs,(disfigured:1.331),(missing arms:1.331),(extra legs:1.331),(fused fingers:1.61051),(too many fingers:1.61051),(unclear eyes:1.331),lowers,bad hands,missing fingers,extra digit,bad hands,missing fingers,(((extra arms and legs))),easy_negative,(((text))),(((logo))),",
+	"extras": {
+		"enable_hr": false,
+		"sampler_name": "DPM++ 2M Karras",
+		"hr_upscaler": "R-ESRGAN 4x+",
+		"steps": 20,
+		"cfg_scale": 7,
+		"save_images": "true",
+		"hr_scale": 2,
+		"denoising_strength": 0.7,
+		"width": 1028,
+		"height": 768,
+		"alwayson_scripts": {
+			"controlnet": {
+				"args": [{
+					"enabled": "true",
+					"model": "ip-adapter_sd15 [6a3f6166]",
+					"module": "ip-adapter_clip_sd15",
+					"image": "",
+					"weight": 1,
+					"resize_mode": 0,
+					"lowvram": "true",
+					"processor_res": 1600,
+					"guidance_end": 1,
+					"guidance_start": 0,
+					"pixel_perfect": "true",
+					"control_mode": 0
+				}]
+			},
+			"AnimateDiff": {
+				"args": [{
+					"enable": false,
+					"model": "mm_sd_v15_v2.ckpt",
+					"format": ["PNG", "GIF"],
+					"video_length": 32,
+					"fps": 8,
+					"loop_number": 0,
+					"closed_loop": "N",
+					"batch_size": 16,
+					"stride": 1,
+					"overlap": 4,
+					"interp": "Off",
+					"interp_x": 10,
+					"latent_power": 1,
+					"latent_scale": 32,
+					"video_path": "",
+					"video_source": "",
+					"last_frame": 0,
+					"latent_power_last": 1,
+					"latent_scale_last": 32,
+					"request_id": ""
+				}]
+			},
+			"ADetailer": {
+				"args": [
+					"true",
+					"false",
+					{
+						"ad_model": "mediapipe_face_full"
+					}
+				]
+			},
+			"reactor": {
+				"args": [
+					"img_base64",
+					true,
+					"0",
+					"0",
+					"",
+					"CodeFormer",
+					1,
+					true,
+					"4x_NMKD-Superscale-SP_178000_G",
+					1.5,
+					1,
+					false,
+					true,
+					1,
+					0,
+					0,
+					false,
+					0.8,
+					false,
+					false,
+					"CUDA",
+					true,
+					1,
+					"elena.safetensors",
+					"",
+					"None",
+					true,
+					true,
+					0.6,
+					2
+				]
+			}
+		}
+	}
+}
